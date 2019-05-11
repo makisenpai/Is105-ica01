@@ -36,24 +36,6 @@ func Bubble_sort(list []int) {
 	}
 }
 
-func Bubble_sort_modified_var(list []int) []int {
-	n := len(list)
-	for {
-		swapp := false
-		for i := 1; i < n; i++ {
-			if list[i-1] > list[i] {
-				list[i-1], list[i] = list[i], list[i-1]
-				swapp = true
-			}
-
-		}
-		if !swapp {
-			break
-		}
-	}
-	return list
-}
-
 // Implementering av Quicksort algoritmen
 func QSort(values []int) {
 	qsort(values, 0, len(values)-1)
