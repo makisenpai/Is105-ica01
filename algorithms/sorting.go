@@ -1,8 +1,24 @@
 package algorithms
 
-// Les https://en.wikipedia.org/wiki/Bubble_sort
 func Bubble_sort_modified(list []int) {
-	// Deres kode her
+	//skriv deres kode her
+	n := len(list)
+	swapp := true
+	for i := 0; i < n; i++ {
+		swapp = false
+		for j := 0; j < n-1; j++ {
+			if list[j] > list[j+1] {
+				temp := list[j+1]
+				list[j+1] = list[j]
+				list[j] = temp
+				swapp = true
+			}
+		}
+		if !swapp {
+			break
+		}
+	}
+
 }
 
 // Implementering av Bubble_sort algoritmen
@@ -18,6 +34,24 @@ func Bubble_sort(list []int) {
 			}
 		}
 	}
+}
+
+func Bubble_sort_modified_var(list []int) []int {
+	n := len(list)
+	for {
+		swapp := false
+		for i := 1; i < n; i++ {
+			if list[i-1] > list[i] {
+				list[i-1], list[i] = list[i], list[i-1]
+				swapp = true
+			}
+
+		}
+		if !swapp {
+			break
+		}
+	}
+	return list
 }
 
 // Implementering av Quicksort algoritmen
